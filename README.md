@@ -1,5 +1,5 @@
-# TXtools
-Tool for processing 10X alignments
+# BarcodeMate
+Tool for pre-processing alignments with barcode
 
 
 ## Dependency
@@ -42,4 +42,3 @@ Tool for processing 10X alignments
 	The exported matrix can be viewed through HiGlass: [NA12878 10X hg19](http://higlass.io/app/?config=ANPVPgtzT4S8fJxzH3SQPA)
 
 - [ ] Generate matrix by haplotype information, for each block generate two matrices
-- [x] 
