@@ -268,11 +268,9 @@ class XConverter():
 
         ##then merge and reheader the bam files
         sf_merged_reheaded_bam = self.working_folder + "merged_reheaded.bam"
-        cmd = "{0} cat -h {1} -o {2} ".format(SAMTOOLS_PATH, sf_header_sam, sf_merged_reheaded_bam)
         bam_fields = self._sf_bam.split("/")
-        for chrm in references:
-            sf_cvted_sam = self.working_folder + bam_fields[-1] + "_" + chrm
-            cmd += "{0} ".format(sf_cvted_sam)
+        sf_cvted_sam = self.working_folder + bam_fields[-1]
+        cmd = "{0} cat -h {1} -o {2} {0}*".format(SAMTOOLS_PATH, sf_header_sam, sf_merged_reheaded_bam, sf_cvted_sam)
         Popen(cmd, shell=True, stdout=PIPE).communicate()
 
         # remove the temporary bam files
